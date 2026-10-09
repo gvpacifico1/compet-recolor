@@ -78,11 +78,53 @@ label start:
     show aime determinada
     a "Claro... Irei dar meu melhor!"
 
+    t "Antes de partirmos, Aime, preciso testar sua sintonia com a Unção. Aqui estão três cristais de essência..."
+    
+    t "Qual deles transmite a energia do Sol, irradiando calor, alegria e vitalidade? Mostre-me sua intuição."
+
+label enigma_sala:
+    $ pedra_escolhida = None
+    call screen aguardar_pedra
+
+    if pedra_escolhida == "AMARELO":
+        jump passou_enigma_sala
+    else:
+        t "Sinta a luz, Aime... Essa não parece ser a essência do Sol. Tente novamente."
+        jump enigma_sala
+
+label passou_enigma_sala:
+    t "Excelente! Você tem uma conexão muito forte com a Unção. Estamos prontos para partir."
+
 
     # --- CENA 2: VILAREJO ---
     scene bg vilarejo with fade
 
     "Os quatro escoteiros chegam ao vilarejo. O Mestre Torii conversa ao fundo com uma pessoa importante local enquanto buscam suprimentos para a longa caminhada."
+
+    show moli sorrindo at left with dissolve
+    m "Precisamos comprar a erva curativa correta, mas o mercador as misturou. Para os humanos comuns, são todas cinzas..."
+    
+    show aime determinada at right with dissolve
+    m "Aime, use sua Unção para nos ajudar! Precisamos daquela que pulsa com a energia da natureza, do musgo úmido e das folhas recém-nascidas."
+
+label enigma_ervas:
+    $ pedra_escolhida = None
+    call screen aguardar_pedra
+
+    if pedra_escolhida == "VERDE":
+        jump passou_enigma_ervas
+    else:
+        show moli seria at left
+        m "Hmm... Essa essência não parece ter a vitalidade da natureza, Aime. Vamos focar de novo."
+        jump enigma_ervas
+
+label passou_enigma_ervas:
+    show moli sorrindo at left
+    m "Isso mesmo! Essa é a erva certa. Ótimo trabalho!"
+    
+    hide moli
+    hide aime
+    with dissolve
 
     show zurie irritada with dissolve
     z "Eerrrgh.. Poderia estar em casa.. Por que Mestre Gangis fez com que nós tivéssemos que resolver todo problema que os monstros causam??"
