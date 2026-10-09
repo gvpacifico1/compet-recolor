@@ -10,6 +10,19 @@ define z = Character("Zurie", color="#c38d9e", image="zurie")
 define a = Character("Aime", color="#85dcba", image="aime")
 define g = Character("Gerivaldo", color="#d3a625", image="gerivaldo")
 
+default pedra_escolhida = None
+
+screen aguardar_pedra():
+    # Botões do ESP32/Joystick
+    key "pad_a" action [SetVariable("pedra_escolhida", "VERDE"), Return()]
+    key "pad_b" action [SetVariable("pedra_escolhida", "AZUL"), Return()]
+    key "pad_x" action [SetVariable("pedra_escolhida", "AMARELO"), Return()]
+    
+    # Teclado para PC (fallback)
+    key "K_1" action [SetVariable("pedra_escolhida", "VERDE"), Return()]
+    key "K_2" action [SetVariable("pedra_escolhida", "AZUL"), Return()]
+    key "K_3" action [SetVariable("pedra_escolhida", "AMARELO"), Return()]
+
 
 label start:
 
@@ -174,18 +187,13 @@ label start:
 
 
     # --- PARTE DO ARDUINO ---
+label enigma_portao:
     g "Posicionem a pedra correta sobre o sensor para liberar o portão..."
+    
+    $ pedra_escolhida = None
 
-    # Menu de teste (caso não use Arduino na hora do teste)
-    if pedra_escolhida is None:
-        "(Sensor desconectado. Escolha a pedra manualmente):"
-        menu:
-            "Apresentar a 1ª Pedra (Musgo / Verde)":
-                $ pedra_escolhida = "VERDE"
-            "Apresentar a 2ª Pedra (Oceano / Azul)":
-                $ pedra_escolhida = "AZUL"
-            "Apresentar a 3ª Pedra (Sol / Amarelo)":
-                $ pedra_escolhida = "AMARELO"
+    # Chama a tela invisível para escutar o joystick do ESP32 ou teclado
+    call screen aguardar_pedra
 
     # Verificação
     if pedra_escolhida == "AZUL":
@@ -196,7 +204,7 @@ label start:
 label falhou_teste:
     show gerivaldo
     g "Essa essência não corresponde ao enigma... Tente novamente."
-    jump start
+    jump enigma_portao
 
 label passou_teste:
     show gerivaldo with dissolve
