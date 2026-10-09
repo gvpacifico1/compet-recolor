@@ -55,14 +55,14 @@ label start:
     t "E por favor, trate de educar Zurie a ponto de ela não sair jogando feitiços em cada um..."
 
     # Subtitui o sprite da Moli pela Zurie emburrada
-    show zurie emburrada at right with dissolve
+    show zurie emburrada at center with dissolve
     z "..."
 
     # Apresenta Aime
-    show aime tímida at right with dissolve
+    show aime tímida with dissolve
     t "E Aime, mesmo que sua entrada seja recente, acho que irá se sair bem com os meninos."
 
-    show aime determinada at right
+    show aime determinada
     a "Claro... Irei dar meu melhor!"
 
 
@@ -71,19 +71,19 @@ label start:
 
     "Os quatro escoteiros chegam ao vilarejo. O Mestre Torii conversa ao fundo com uma pessoa importante local enquanto buscam suprimentos para a longa caminhada."
 
-    show zurie irritada at left with dissolve
+    show zurie irritada with dissolve
     z "Eerrrgh.. Poderia estar em casa.. Por que Mestre Gangis fez com que nós tivéssemos que resolver todo problema que os monstros causam??"
 
-    show moli seria at right with dissolve
+    show moli seria at left with dissolve
     m "É apenas um rumor, Zurie. Não se sabe se eles vão invadir."
 
-    show aime calada at center with dissolve
+    show aime calada at left with dissolve
     a "..."
 
-    show joku seria at left with dissolve
+    show joku seria with dissolve
     j "Bem, se invadirem, iremos impedir. É para isso que nós, bruxos, servimos como propósito."
 
-    show zurie braba at right with hpunch
+    show zurie irritada with hpunch
     z "Eles deveriam resolver os problemas sozinhos, Jok-"
 
     hide zurie
@@ -101,13 +101,13 @@ label start:
     show zurie cansada at left with dissolve
     z "Os monstros podiam viver mais perto, né? Eu tô morrendo de cansaço!"
 
-    show moli feliz at right with dissolve
+    show moli sorrindo with dissolve
     m "Sabia que os monstros veem diferente da gente? Enquanto a gente vê tudo cinza, eles enxergam meio amarelado.. É engraçado, visto que eles são os originários da Unção. Como será ver tudo amarelo..?"
 
-    show joku seria at center with dissolve
+    show joku seria at left with dissolve
     j "Fecha a boca e mexe as pernas! Vocês vão ficar pra trás assim."
 
-    show zurie brava at left with vpunch
+    show zurie irritada at left with vpunch
     z "OLHA AQUI SUA-"
 
 
@@ -116,22 +116,22 @@ label start:
 
     "Após um longo tempo de caminhada, elas chegam à terra principal dos monstros e são paradas junto ao grande portão."
 
-    show gerivaldo calmo at right with dissolve
+    show gerivaldo at left with dissolve
     g "Ora, bruxelas. Não esperava ver vocês aqui tão cedo. Quando foi a última vez? Há.. 100 anos atrás? Meio recente."
 
-    show moli seria at left with dissolve
+    show joku decidida at right with dissolve
     m "Novas tendências requerem novas respostas. Só queremos procurar saber e apaziguar a situação.."
 
-    show gerivaldo curioso at right
+    show gerivaldo at left
     g "Que situação? Tenho um ouvido apurado e não escutei nenhuma notícia sobre vocês. Claro, há quem fale sobre vocês.. Mas nada fora do normal."
 
-    show joku decidida at left with dissolve
+    show joku decidida at right with dissolve
     j "... Ainda sim, não custa nada ir resolver! Certo, gente? Somos bruxos e nosso trabalho é ajudar as duas raças."
 
-    show gerivaldo serio at right
+    show gerivaldo
     g "Mas para do portão passar, um problema vocês devem decifrar. No caso, apenas detalhar. Sabem da prova, não é?"
 
-    show zurie surpresa at left with hpunch
+    show zurie irritada at right with hpunch
     z "Prova???? Que tipo de prova???"
 
     show joku decidida at left
@@ -140,7 +140,7 @@ label start:
     show aime preocupada at left with dissolve
     a "Mas.. parecemos bruxos! Acho que não precisa desse teste.."
 
-    show gerivaldo calmo at right
+    show gerivaldo
     g "É necessário, pequena mariposa. Não sabemos com quem estamos lidando. Uma folha para cada um de vocês."
 
     "Vocês observam atentamente cada folha entregada."
@@ -152,13 +152,13 @@ label start:
 
     scene bg portao_monstros with dissolve
 
-    show gerivaldo desconfiado at right with dissolve
+    show gerivaldo with dissolve
     g "Hm.. Estranho. Um dos bruxinhos vê bem amarelo, não é?"
 
     show aime nervosa at left with dissolve
     a "Ah, devem ter errado na coloração da imagem…"
 
-    show gerivaldo pensando at right
+    show gerivaldo
     g "Tudo bem. Deve mesmo. Certo, agora a última prova. Aqui são três pedras. A Unção de vocês não deve estar tão enferrujada, certo?"
 
     "Gerivaldo apresenta as três pedras no pedestal."
@@ -168,7 +168,7 @@ label start:
     # Descrições das pedras
     "1ª Pedra: Superfície irregular e fria ao toque. Em seu interior, uma essência parece se movimentar lentamente, como se estivesse viva. Sua tonalidade lembra folhas recém-nascidas, musgo úmido e a vegetação depois da chuva."
 
-    "2ª Pedra: Pedra lisa, de aparência cristalina, que parece guardar uma pequena corrente de energia dentro de si. Sua essência possui uma tonalidade que lembra o céu em um dia sem nuvens e a profundidade tranquila do oceano. Ao se aproximar, é possível sentir uma sensação de calma e liberdade. A luz refletida parece fria e serena."
+    "2ª Pedra: Pedra lisa, de aparência cristalina, que parece guardar uma pequena corrente de energia dentro de si. Sua essência possui uma tonalidade que lembra o céu em um dia sem nuvens e a profundidade tranquila do oceano. Ao se aproximar, é possível sentir uma sensação de calma e liberdade."
 
     "3ª Pedra: Pedra quente, mesmo longe de qualquer fonte de calor. Dentro dela, uma essência brilhante pulsa suavemente, lembrando a luz do sol, campos de trigo e flores iluminadas durante o verão. Transmite calor, alegria e vitalidade."
 
@@ -194,12 +194,12 @@ label start:
         jump falhou_teste
 
 label falhou_teste:
-    show gerivaldo serio at right
+    show gerivaldo
     g "Essa essência não corresponde ao enigma... Tente novamente."
     jump start
 
 label passou_teste:
-    show gerivaldo sorrindo at right with dissolve
+    show gerivaldo with dissolve
     g "Tudo certo, bruxinhos. Podem passar!"
     
     "O grande portão de madeira e ferro das terras dos monstros range lentamente, abrindo passagem para a equipe."
